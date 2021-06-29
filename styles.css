@@ -5,8 +5,13 @@
 }
 
 #name,
-#email {
+#email,
+#selectDays {
   border-radius: 50px;
+}
+
+#selectDays {
+  min-width: 300px;
 }
 
 .form-group {

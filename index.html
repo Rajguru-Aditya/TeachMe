@@ -33,7 +33,7 @@
             />
             <label for="floatingInput">Email address</label>
           </div>
-          <select name="days" id="days" class="btn btn-dark mb-3">
+          <!-- <select name="days" id="days" class="btn btn-dark mb-3">
             <option value="monday">Monday</option>
             <option value="tuesday">Tuesday</option>
             <option value="wednesday">Wednesday</option>
@@ -42,7 +42,15 @@
             <option value="saturday">Saturday</option>
             <option value="sunday">Sunday</option>
             <option value="week">Entire Week</option>
-          </select>
+          </select> -->
+          <div>
+            <input
+              type="date"
+              id="selectDays"
+              name="selectDays"
+              class="form-control mb-3 btn btn-outline-light"
+            />
+          </div>
           <div
             class="btn-group"
             role="group"
@@ -57,7 +65,7 @@
               checked=""
             />
             <label class="btn btn-outline-primary" for="btnradio1"
-              >Radio 1</label
+              >Slot 1</label
             >
             <input
               type="radio"
@@ -68,7 +76,7 @@
               checked=""
             />
             <label class="btn btn-outline-primary" for="btnradio2"
-              >Radio 2</label
+              >Slot 2</label
             >
             <input
               type="radio"
@@ -79,9 +87,21 @@
               checked=""
             />
             <label class="btn btn-outline-primary" for="btnradio3"
-              >Radio 3</label
+              >Slot 3</label
+            >
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio"
+              id="btnradio3"
+              autocomplete="off"
+              checked=""
+            />
+            <label class="btn btn-outline-primary" for="btnradio3"
+              >Slot 4</label
             >
           </div>
+          <a href="#">See timings for each slot</a>
         </div>
       </form>
     </div>
