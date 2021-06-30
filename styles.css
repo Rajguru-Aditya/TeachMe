@@ -15,6 +15,7 @@
 
 #me {
   height: 200px;
+  margin-bottom: 10px;
 }
 
 /* Form */
@@ -107,11 +108,11 @@
 
 i {
   font-size: 40px;
-  padding: 10px;
+  padding: 15px;
   color: #4c9be8;
 }
 
 i:hover {
   color: #fff;
-  transition: all 0.5s ease;
+  transition: 0.5s ease;
 }
