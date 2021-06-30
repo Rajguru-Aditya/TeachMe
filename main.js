@@ -6,7 +6,7 @@ const slotBtns = document.querySelectorAll(".btn-check");
 const submitBtn = document.querySelector("#submitBtn");
 
 //Modal
-const modal = document.querySelector(".myModal");
+const modal = document.querySelector("#slotsModal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".closeModal");
 const btnOpenModal = document.querySelector(".showModal");
@@ -23,11 +23,20 @@ const openModal = function () {
 
 btnOpenModal.addEventListener("click", openModal);
 
-btnCloseModal.addEventListener("click", closeModal);
-overlay.addEventListener("click", closeModal);
+const showAlert = function () {
+  const div = document.createElement("div");
+  div.className = "alert alert-success";
+  div.appendChild(document.createTextNode("Lesson Booked Successfully!"));
+  const container = document.querySelector(".container-fluid");
+  const form = document.querySelector(".form");
+  container.insertBefore(div, form);
 
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
-    closeModal();
-  }
-});
+  // Make the alert disappear in 3 seconds
+  setTimeout(() => document.querySelector(".alert").remove(), 3000);
+};
+
+submitBtn.addEventListener("click", showAlert);
+
+btnCloseModal.addEventListener("click", closeModal);
+
+overlay.addEventListener("click", closeModal);
