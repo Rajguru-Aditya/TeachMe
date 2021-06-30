@@ -91,29 +91,26 @@
             <label class="btn btn-outline-primary" for="btnradio3"
               >Slot 3</label
             >
-            <input
-              type="radio"
-              class="btn-check"
-              name="btnradio"
-              id="btnradio3"
-              autocomplete="off"
-              checked=""
-            />
-            <label class="btn btn-outline-primary" for="btnradio3"
-              >Slot 4</label
-            >
           </div>
-          <a href="#">See timings for each slot</a>
+          <p class="showModal">See timings for each slot</p>
         </div>
       </form>
-    </div>
-    <footer>
-      <div class="socialLinks">
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-github"></i>
-        <i class="far fa-envelope"></i>
+      <div class="myModal hidden">
+        <button class="closeModal">&times;</button>
+        <h1 class="modalH">Timings for each slot</h1>
+        <pre class="modalP">
+Slot 1: 1 pm (13:00) IST
+Slot 2: 5 pm (17:00) IST
+Slot 3: 9:30 pm (21:30) IST
+        </pre>
       </div>
-    </footer>
+      <div class="overlay hidden"></div>
+    </div>
+    <div class="socialLinks">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-github"></i>
+      <i class="far fa-envelope"></i>
+    </div>
     <script src="/main.js"></script>
   </body>
 </html>
