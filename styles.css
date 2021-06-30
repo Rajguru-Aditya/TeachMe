@@ -4,14 +4,31 @@
   box-sizing: border-box;
 }
 
+/* AboutMe */
+.aboutMe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+#me {
+  height: 200px;
+}
+
+/* Form */
 #name,
 #email,
 #selectDays {
   border-radius: 50px;
+  padding-left: 10px;
+  text-align: center;
 }
 
 #selectDays {
   min-width: 300px;
+  color: rgb(155, 155, 155);
 }
 
 .form-group {
@@ -19,9 +36,25 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 50vh;
 }
 
 .form-floating {
   min-width: 300px;
+}
+
+/* Social Links */
+.socialLinks {
+  text-align: center;
+}
+
+i {
+  font-size: 40px;
+  padding: 10px;
+  color: #4c9be8;
+}
+
+i:hover {
+  color: #fff;
+  transition: all 0.5s ease;
 }
