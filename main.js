@@ -1,3 +1,11 @@
+//Form
+const nameInput = document.querySelector("#name");
+const emailInput = document.querySelector("#email");
+const dateInput = document.querySelector("#selectDays");
+const slotBtns = document.querySelectorAll(".btn-check");
+const submitBtn = document.querySelector("#submitBtn");
+
+//Modal
 const modal = document.querySelector(".myModal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".closeModal");

@@ -44,6 +44,10 @@
   min-width: 300px;
 }
 
+#submitBtn {
+  border-radius: 50px;
+}
+
 /* Modal */
 .showModal {
   color: rgb(185, 184, 184);
