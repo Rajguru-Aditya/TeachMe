@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://bootswatch.com/5/superhero/bootstrap.min.css"
-    />
-    <title>Teach Me 👓</title>
-  </head>
-  <body>
+<%- include("header") -%>
     <div class="aboutMe">
       <img src="/images/circle-croppedME.png" alt="Aditya Rajguru" id="me" />
       <h1>I am Aditya Rajguru 👋</h1>
@@ -32,6 +12,7 @@
               type="text"
               class="form-control"
               id="name"
+              name="name"
               placeholder="FirstName LastName"
             />
             <label for="floatingInput">Name</label>
@@ -41,6 +22,7 @@
               type="email"
               class="form-control"
               id="email"
+              name="email"
               placeholder="name@example.com"
             />
             <label for="floatingInput">Email address</label>
@@ -92,14 +74,19 @@
               >Slot 3</label
             >
           </div>
-          <p class="showModal">See timings for each slot</p>
-          <button type="button" id="submitBtn" class="btn btn-outline-primary">
+          <p name="showModal" class="showModal">See timings for each slot</p>
+          <button
+            name="subBtn"
+            type="button"
+            id="submitBtn"
+            class="btn btn-outline-primary"
+          >
             Submit
           </button>
         </div>
       </form>
-      <div class="myModal hidden" id="slotsModal">
-        <button class="closeModal">&times;</button>
+      <div name="modal" class="myModal hidden" id="slotsModal">
+        <button name="closeModal" class="closeModal">&times;</button>
         <h1 class="modalH">Timings for each slot</h1>
         <pre class="modalP">
 Slot 1: 1 pm (13:00) IST(Indian Standard Time)
@@ -108,28 +95,6 @@ Slot 3: 9:30 pm (21:30) IST(Indian Standard Time)
 <a href="https://www.thetimezoneconverter.com/" target="_blank">Convert timezone</a>
         </pre>
       </div>
-      <div class="overlay hidden"></div>
+      <div name="overlay" class="overlay hidden"></div>
     </div>
-    <div class="socialLinks">
-      <a target="_blank" href="https://www.instagram.com/_apollonox_/"
-        ><i class="fab fa-instagram"></i
-      ></a>
-      <a target="_blank" href="https://github.com/Rajguru-Aditya"
-        ><i class="fab fa-github"></i
-      ></a>
-      <a target="_blank" href="mailto:rajguru.aditya.25@gmail.com"
-        ><i class="far fa-envelope"></i
-      ></a>
-    </div>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init("user_I7MqpOAoek7IZZefpYNF1");
-      })();
-    </script>
-    <script src="/main.js"></script>
-  </body>
-</html>
+<%- include("footer") -%>

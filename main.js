@@ -1,65 +1,61 @@
-//Form elements selection
-const nameInput = document.querySelector("#name").value;
-const emailInput = document.querySelector("#email").value;
-const dateInput = document.querySelector("#selectDays").value;
-const slotBtns = document.querySelectorAll(".btn-check");
-const submitBtn = document.querySelector("#submitBtn");
+const express = require("express");
+const bodyParser = require("body-parser");
+const ejs = require("ejs");
 
-//Modal elements selection
-const modal = document.querySelector("#slotsModal");
-const overlay = document.querySelector(".overlay");
-const btnCloseModal = document.querySelector(".closeModal");
-const btnOpenModal = document.querySelector(".showModal");
+const app = express();
 
-// Making the modal work
-const closeModal = function () {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
-};
+app.set("view engine", "ejs");
 
-const openModal = function () {
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-};
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
-btnOpenModal.addEventListener("click", openModal);
+app.get("/", function (req, res) {
+  //Form elements selection
+  const nameInput = req.body.name;
+  const emailInput = req.body.email;
+  const dateInput = req.body.selectDays;
+  const slotBtns = req.body.name;
+  const submitBtn = req.body.name;
 
-const showAlert = function () {
-  const div = document.createElement("div");
-  div.className = "alert alert-success";
-  div.appendChild(document.createTextNode("Lesson Booked Successfully!"));
-  const container = document.querySelector(".container-fluid");
-  const form = document.querySelector(".form");
-  container.insertBefore(div, form);
+  //Modal elements selection
+  const modal = req.body.modal;
+  const overlay = req.body.overlay;
+  const btnCloseModal = req.body.closeModal;
+  const btnOpenModal = req.body.showModal;
 
-  // Make the alert disappear in 3 seconds
-  setTimeout(() => document.querySelector(".alert").remove(), 3000);
-};
-
-btnCloseModal.addEventListener("click", closeModal);
-
-overlay.addEventListener("click", closeModal);
-
-//Send Email
-const sendMail = function (params) {
-  let tempParams = {
-    from_name: nameInput,
-    to_name: "CodeMon",
-    message: dateInput,
+  // Making the modal work
+  const closeModal = function () {
+    modal.classList.add("hidden");
+    overlay.classList.add("hidden");
   };
 
-  emailjs
-    .send("service_7v9d75q", "template_elyk4ti", tempParams)
-    .then(function (res) {
-      console.log("success", res.status);
-    });
-};
+  const openModal = function () {
+    modal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+  };
 
-submitBtn.addEventListener("click", sendMail);
+  // btnOpenModal.addEventListener("click", openModal);
 
-// for (let i = 0; i < slotBtns.length; i++) {
-//   slotBtns[i].addEventListener("click", () => {
-//     slotBtns[i].classList.add("active");
-//     console.log("class added");
-//   });
-// }
+  const showAlert = function () {
+    const div = document.createElement("div");
+    div.className = "alert alert-success";
+    div.appendChild(document.createTextNode("Lesson Booked Successfully!"));
+    const container = document.querySelector(".container-fluid");
+    const form = document.querySelector(".form");
+    container.insertBefore(div, form);
+
+    // Make the alert disappear in 3 seconds
+    setTimeout(() => document.querySelector(".alert").remove(), 3000);
+  };
+
+  // btnCloseModal.addEventListener("click", closeModal);
+
+  // overlay.addEventListener("click", closeModal);
+
+  // submitBtn.addEventListener("click", showAlert);
+  res.render("index");
+});
+
+app.listen(4000, function () {
+  console.log("Server started on port 4000");
+});
