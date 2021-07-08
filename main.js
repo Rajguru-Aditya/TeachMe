@@ -1,16 +1,17 @@
-//Form
-const nameInput = document.querySelector("#name");
-const emailInput = document.querySelector("#email");
-const dateInput = document.querySelector("#selectDays");
+//Form elements selection
+const nameInput = document.querySelector("#name").value;
+const emailInput = document.querySelector("#email").value;
+const dateInput = document.querySelector("#selectDays").value;
 const slotBtns = document.querySelectorAll(".btn-check");
 const submitBtn = document.querySelector("#submitBtn");
 
-//Modal
+//Modal elements selection
 const modal = document.querySelector("#slotsModal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".closeModal");
 const btnOpenModal = document.querySelector(".showModal");
 
+// Making the modal work
 const closeModal = function () {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
@@ -35,8 +36,30 @@ const showAlert = function () {
   setTimeout(() => document.querySelector(".alert").remove(), 3000);
 };
 
-submitBtn.addEventListener("click", showAlert);
-
 btnCloseModal.addEventListener("click", closeModal);
 
 overlay.addEventListener("click", closeModal);
+
+//Send Email
+const sendMail = function (params) {
+  let tempParams = {
+    from_name: nameInput,
+    to_name: "CodeMon",
+    message: dateInput,
+  };
+
+  emailjs
+    .send("service_7v9d75q", "template_elyk4ti", tempParams)
+    .then(function (res) {
+      console.log("success", res.status);
+    });
+};
+
+submitBtn.addEventListener("click", sendMail);
+
+// for (let i = 0; i < slotBtns.length; i++) {
+//   slotBtns[i].addEventListener("click", () => {
+//     slotBtns[i].classList.add("active");
+//     console.log("class added");
+//   });
+// }

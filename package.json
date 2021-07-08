@@ -1,0 +1,25 @@
+{
+  "name": "teachme",
+  "version": "1.0.0",
+  "description": "![teachMeTN](https://user-images.githubusercontent.com/77228474/124004515-b7468880-d9f5-11eb-8851-d5b93d81ad44.png)",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rajguru-Aditya/TeachMe.git"
+  },
+  "author": "Aditya Rajguru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rajguru-Aditya/TeachMe/issues"
+  },
+  "homepage": "https://github.com/Rajguru-Aditya/TeachMe#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.2",
+    "nodemon": "^2.0.9"
+  }
+}
