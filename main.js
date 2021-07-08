@@ -10,19 +10,22 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", function (req, res) {
+  res.render("index");
   //Form elements selection
   const nameInput = req.body.name;
   const emailInput = req.body.email;
   const dateInput = req.body.selectDays;
   const slotBtns = req.body.name;
-  const submitBtn = req.body.name;
+});
+
+app.post("/", function (req, res) {
+  const submitBtn = req.body.subBtn;
 
   //Modal elements selection
   const modal = req.body.modal;
   const overlay = req.body.overlay;
   const btnCloseModal = req.body.closeModal;
   const btnOpenModal = req.body.showModal;
-
   // Making the modal work
   const closeModal = function () {
     modal.classList.add("hidden");
@@ -34,7 +37,7 @@ app.get("/", function (req, res) {
     overlay.classList.remove("hidden");
   };
 
-  // btnOpenModal.addEventListener("click", openModal);
+  // btnOpenModal.on("click", openModal);
 
   const showAlert = function () {
     const div = document.createElement("div");
@@ -48,12 +51,13 @@ app.get("/", function (req, res) {
     setTimeout(() => document.querySelector(".alert").remove(), 3000);
   };
 
-  // btnCloseModal.addEventListener("click", closeModal);
+  // btnCloseModal.on("click", closeModal);
 
-  // overlay.addEventListener("click", closeModal);
+  // overlay.on("click", closeModal);
 
-  // submitBtn.addEventListener("click", showAlert);
-  res.render("index");
+  // submitBtn.emit("click", showAlert);
+  // submitBtn.EventEmitter("click", showAlert);
+  res.render("success");
 });
 
 app.listen(4000, function () {
