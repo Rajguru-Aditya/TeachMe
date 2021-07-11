@@ -1,7 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.container-fluid {
+  text-align: center;
 }
 
 /* AboutMe */
@@ -11,11 +17,33 @@
   align-items: center;
   justify-content: center;
   padding-top: 20px;
+  font-family: "Montserrat", sans-serif;
 }
 
 #me {
   height: 200px;
   margin: 20px 0;
+}
+
+.aboutDiv {
+  text-align: center;
+}
+
+.aboutPara {
+  font-size: 20px;
+  width: 70%;
+  padding: 50px 0;
+}
+
+hr {
+  width: 70%;
+  color: #fff;
+}
+
+.svg-icons {
+  width: 150px;
+  padding: 20px 10px;
+  margin: 0;
 }
 
 /* Form */
@@ -56,7 +84,8 @@
   color: rgb(139, 137, 137);
 }
 
-#submitBtn {
+#submitBtn,
+#aboutBtn {
   border-radius: 50px;
 }
 
