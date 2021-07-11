@@ -3,6 +3,7 @@
       <img src="/images/circle-croppedME.png" alt="Aditya Rajguru" id="me" />
       <h1>I am Aditya Rajguru 👋</h1>
       <p>I'll teach you <em>HTML, CSS, JavaScript, Bootstrap</em></p>
+      <a href="/about"><button type="button" class="btn btn-outline-primary">About Me</button></a>
     </div>
     <div class="container-fluid">
       <form class="form" method="Post">
@@ -14,6 +15,7 @@
               id="name"
               name="name"
               placeholder="FirstName LastName"
+              required
             />
             <label for="floatingInput">Name</label>
           </div>
@@ -24,6 +26,7 @@
               id="email"
               name="email"
               placeholder="name@example.com"
+              required
             />
             <label for="floatingInput">Email address</label>
           </div>
@@ -33,27 +36,29 @@
               id="selectDays"
               name="selectDays"
               class="form-control mb-3"
+              required
             />
           </div>
 
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+          <div id="slotBoxes" class="form-check">
+            <input class="form-check-input" type="checkbox" value="Slot1" name="checkBtn">
             <label class="form-check-label" for="flexCheckDefault">
-              Slot 1: 1 pm (13:00) IST(Indian Standard Time)
+              Slot 1: 1:00 pm (13:00)
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <input class="form-check-input" type="checkbox" value="Slot2" name="checkBtn">
             <label class="form-check-label" for="flexCheckChecked">
-              Slot 2: 5 pm (17:00) IST(Indian Standard Time)
+              Slot 2: 5:00 pm (17:00)
             </label>
           </div>
            <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <input class="form-check-input" type="checkbox" value="Slot3" name="checkBtn">
             <label class="form-check-label" for="flexCheckChecked">
-              Slot 3: 9:30 pm (21:30) IST(Indian Standard Time)
+              Slot 3: 9:30 pm (21:30)
             </label>
           </div>
+          <p id="note">NOTE: All of these timing are according to IST(India Standard Time)</p>
           <p><a class="timezone" href="https://www.thetimezoneconverter.com/" target="_blank">Convert timezone</a></p>
 
           <button

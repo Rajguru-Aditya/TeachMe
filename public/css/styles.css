@@ -15,7 +15,7 @@
 
 #me {
   height: 200px;
-  margin-bottom: 10px;
+  margin: 20px 0;
 }
 
 /* Form */
@@ -37,7 +37,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50vh;
+  height: 450px;
 }
 
 .form-floating {
@@ -50,6 +50,10 @@
 
 .timezone:hover {
   color: #fff;
+}
+
+#note {
+  color: rgb(139, 137, 137);
 }
 
 #submitBtn {
