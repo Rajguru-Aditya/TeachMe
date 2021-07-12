@@ -4,11 +4,14 @@ const ejs = require("ejs");
 const mongoose = require("mongoose");
 const alert = require("alert");
 
-mongoose.connect("mongodb://localhost:27017/teachMeDB", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-});
+mongoose.connect(
+  "mongodb+srv://admin-aditya-rajguru:aditya221b@teachmecluster.xflpn.mongodb.net/teachMeDB",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  }
+);
 
 const studentSchema = {
   name: String,
