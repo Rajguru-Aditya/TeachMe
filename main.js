@@ -4,6 +4,21 @@ const ejs = require("ejs");
 const mongoose = require("mongoose");
 const alert = require("alert");
 
+mongoose.connect("mongodb://localhost:27017/teachMeDB", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+});
+
+const studentSchema = {
+  name: String,
+  email: String,
+  date: String,
+  slot: String,
+};
+
+const Student = mongoose.model("Student", studentSchema);
+
 const app = express();
 
 app.set("view engine", "ejs");
@@ -24,10 +39,17 @@ app.post("/", function (req, res) {
   if (!checkboxes) {
     alert("Please select a slot for your lessons!");
   } else {
-    console.log(nameInput);
-    console.log(emailInput);
-    console.log(dateInput);
-    console.log(checkboxes.toString());
+    const student = new Student({
+      name: nameInput,
+      email: emailInput,
+      date: dateInput,
+      slot: checkboxes.toString(),
+    });
+    // console.log(nameInput);
+    // console.log(emailInput);
+    // console.log(dateInput);
+    // console.log(checkboxes.toString());
+    student.save();
     res.render("success");
   }
 });
