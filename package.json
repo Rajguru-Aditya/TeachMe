@@ -12,6 +12,9 @@
   },
   "author": "Aditya Rajguru",
   "license": "ISC",
+  "engines": {
+    "node": "14.17.2"
+  },
   "bugs": {
     "url": "https://github.com/Rajguru-Aditya/TeachMe/issues"
   },
